@@ -7,6 +7,7 @@ Group:		Publishing
 Source0:	http://www.molspaces.com/dl/progs/%{name}-%{version}.tar.gz
 Url:		http://www.molspaces.com/cb2bib
 BuildRequires:	cmake
+BuildRequires:	liblzo-devel
 
 %description
 From clipboard to BibTeX: A tool for rapidly extracting unformatted bibliographic
