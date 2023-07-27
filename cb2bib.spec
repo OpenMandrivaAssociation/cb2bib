@@ -1,14 +1,20 @@
+%undefine _debugsource_packages
+
 Name:		cb2bib
 Summary:	A tool for extracting bibliographic references
-Version:	1.4.7
+Version:	2.0.1
 License:	GPL
 Release:	1
 Group:		Publishing	
 Source0:	http://www.molspaces.com/dl/progs/%{name}-%{version}.tar.gz
 Url:		http://www.molspaces.com/cb2bib
-BuildRequires:	cmake
-BuildRequires:	liblzo-devel
-BuildRequires:	qt4-devel
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	qmake5
+BuildRequires:	make
+BuildRequires:	pkgconfig(liblz4)
 
 %description
 From clipboard to BibTeX: A tool for rapidly extracting unformatted bibliographic
@@ -21,15 +27,17 @@ permits editing and browsing BibTeX files, searching references and the contents
 of linked files, and cite them into document editors.
 
 %prep
-%setup -q
+%autosetup -p1
+# Looks like autoconf, but isn't -- it's actually a qmake wrapper
+./configure \
+	--prefix %{_prefix} \
+	--enable-lz4
 
 %build
-%cmake
-%make
+%make_build
 
 %install
-cd build/
-%makeinstall_std
+%make_install INSTALL_ROOT=%{buildroot}
 
 %files
 %{_bindir}/*
