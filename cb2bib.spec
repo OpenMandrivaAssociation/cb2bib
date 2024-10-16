@@ -7,7 +7,7 @@ License:	GPL
 Release:	1
 Group:		Publishing	
 Source0:	http://www.molspaces.com/dl/progs/%{name}-%{version}.tar.gz
-Url:		http://www.molspaces.com/cb2bib
+Url:		https://www.molspaces.com/cb2bib
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
