@@ -2,7 +2,7 @@
 
 Name:		cb2bib
 Summary:	A tool for extracting bibliographic references
-Version:	2.0.1
+Version:	2.0.2
 License:	GPL
 Release:	1
 Group:		Publishing	
