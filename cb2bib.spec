@@ -8,6 +8,10 @@ Release:	1
 Group:		Publishing	
 Source0:	http://www.molspaces.com/dl/progs/%{name}-%{version}.tar.gz
 Url:		https://www.molspaces.com/cb2bib
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
